@@ -1,0 +1,49 @@
+<%= form_with model: [:dashboard, project] do |form| %>
+
+    <%= render 'dashboard/shared/error', model: project%>
+    <div class="grid gap-6">
+        <div class="grid gap-1">
+            <%= form.label :title, "Project Title", class: "font-bold" %>
+            <%= form.text_field :title, placeholder: "Enter project title", class: "w-full" %>
+            <%= render 'dashboard/shared/field_error', model: project, field: :title%>
+        </div>
+        <div class="grid gap-1">
+            <%= form.label :url, "Project URL", class: "font-bold" %>
+            <%= form.text_field :url, placeholder: "Enter project URL", class: "w-full" %>
+            <%= render 'dashboard/shared/field_error', model: project, field: :url%>
+        </div>
+        <div class="grid gap-3">
+            <%= form.label :excerpt, "Excerpt", class: "font-bold" %>
+            <%= form.text_area :excerpt, class: "w-full" %>
+            <%= render 'dashboard/shared/field_error', model: project, field: :excerpt%>
+        </div>
+        <div class="grid gap-3">
+            <%= form.label :description, "Project description", class: "font-bold" %>
+            <%= form.text_area :description, class: "w-full tinymce"%>
+            <%= render 'dashboard/shared/field_error', model: project, field: :description %>
+        </div>
+        <div class="grid gap-1">
+            <%= form.label :image, "project image", class: "font-bold"%>
+            <%= form.file_field :image, placeholder: "Enter project image", class: "w-full"%>
+            <%= render 'dashboard/shared/field_error', model: project, field: :image%>
+        </div>
+        <div class="grid gap-3">
+        <div class="flex space-x-2 items-center">
+            <%= form.radio_button :published, true %>
+            <%= form.label :published_true, "Published", class: "font-bold" %> 
+        </div>
+        <div class="flex space-x-2 items-center">
+            <%= form.radio_button :published, false %>
+            <%= form.label :published_false, "Not published", class: "font-bold" %>
+        </div>
+        <%= render 'dashboard/shared/field_error', model: project, field: :published%>
+        </div>
+
+        <div>
+            <%= form.submit class: "btn-secondary" %>
+        </div>
+
+    </div>
+        
+<% end %>
+     

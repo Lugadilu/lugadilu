@@ -1,0 +1,31 @@
+<section>
+    <div class="default-container">
+        <div class="grid gap-6">
+            <div class="grid gap-2">
+                <h1 class="text-2xl font-bold"><%= @post.title%></h1>
+            </div>
+            <div class="grid gap-2">
+                <%= image_tag @post.image_link, class: "h-80 w-auto object-cover"%>
+             </div>
+            <div class="grid gap-2">
+                <p class="font-bold">Post Excerpt</p>
+                <%= @post.excerpt%>
+            </div>
+            <div class="grid gap-2">
+                <p class="font-bold">Post body</p>
+                <%= @post.body.html_safe%>
+            </div>
+            <div class="grid gap-2">
+                <p class="font-bold">Published</p>
+                <span class="rounded-full px-2 <%= @post.published ? 'text-primary' : 'text-secondary' %>%>"><%= @post.published ?  '&check;'.html_safe : '&times;'.html_safe %></span>
+            </div>
+            <div class="grid gap-2">
+                <div><%= link_to 'Edit Project', edit_dashboard_post_path(@post), class: "btn-secondary w-auto"%></div>
+                <div><%= link_to 'All projects', dashboard_post_path, class: "btn-primary w-auto"%></div>
+            </div>
+            <div class="grid gap-2">
+            
+            </div>
+        </div>
+    </div>
+</section>

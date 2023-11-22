@@ -1,0 +1,28 @@
+
+<!-- app/views/pages/home.html.erb -->
+
+<div class="bg-blue-600 h-screen flex flex-row items-center justify-end space-x-10 px-20">
+  <div class="text-white">
+    <h1 class="text-3xl font-bold">Let Your website do the Work</h1>
+    <div class="space-y-4">
+      <p>Website designs that fit your needs</p>
+      <p>Invest, find and grow your audience</p>
+
+      <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none py-6">
+            <%=link_to "Work with us", home_path, class: "btn-secondary"%>
+        </div>
+    </div>
+  </div>
+  <div>
+    <%= image_tag 'default.jpg', class: 'h-80 w-full object-cover rounded' %>
+  </div>
+</div>
+  
+  <!-- More sections and content as needed -->
+  
+  <footer class="bg-gray-200 py-6">
+    <div class="container mx-auto text-center">
+      <p>&copy; <%= Time.now.year %> Mc Mobiles and Laptop solutions</p>
+    </div>
+  </footer>
+

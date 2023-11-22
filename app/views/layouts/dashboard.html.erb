@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html class="h-full bg-gray-900">
+  <head>
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+          <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+     
+
+  </head>
+
+  <body class="h-full">
+  <%= render 'partials/dashboard/sidebar/sidebar' %>
+    <main class="xl:pl-72">
+      <%= render 'partials/dashboard/header' %>
+      <div class="p-6 bg-white min-h-screen">
+        <%= yield %>
+      </div>
+    </main>
+     <script>
+        tinymce.init({
+          selector: '.tinymce',
+          height: 500,
+          menubar: false,
+          plugins: [
+            'advlist autolink lists link image charmap print preview anchor',
+            'searchreplace visualblocks code fullscreen',
+            'insertdatetime media table paste code help wordcount'
+          ],
+            toolbar: 'undo redo | formatselect | ' +
+            ' bold italic backcolor | alignleft aligncenter ' +
+            ' alignright alignjustify | bullist numlist outdent indent | ' +
+            ' removeformat | help'
+        });
+ </script>
+  </body>
+</html>

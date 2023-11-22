@@ -1,0 +1,102 @@
+<section class="bg-gray-100 sticky top-0">
+    <div class="default-container max-w-3xl py-3">
+      <div class="text-center font-semibold">
+            <ul class="flex space-x-3">
+                <li><a href="#about-me">About me in 10 seconds</a></li>
+                <li><a href="#now">Now</a></li>
+                <%# <li>Features and awards</li> %>
+                <li><a href="#timeline">Timeline</a></li>
+                <%# <li>Find me online</li> %>
+            </ul>
+        </div>
+    </div>
+</section>
+<section id="about-me" class="scroll-to">
+    <div class="section-container max-w-3xl space-y-6">
+        <%= image_tag "grad.jpg", class: 'h-100 w-90 xl:h-100 w-90 rounded'%>
+        <div class="space-y-6">
+            <h1 class="text-3xl font-bold xl-5xl">About me in 10 seconds</h1>
+            <p>Hey hey! I'm <b>Lugadilu</b>, a <b>Full Stack Software Developer, a <b>Graduate Agricultural and Biosystems Engineer</b> and an <b>Entrepreneur.</b></b></p>
+            <p>I take it all as a way of improving myself, growing professionally and also economically</p> 
+            <p>In persuit of improving my skillset, I am a Ruby on Rails Full stack developer. I design projects following the MVC format and also APIs. </p>
+            <p> Professionally, I am a Soil Wand Environmental Engineer. I practice GIS and Hydrology more. I have done multiple projects even recognised Internationally in the water sector i.e International Water Association.</p>
+            <p>I run a computer repair, laptop sales and accesories shop located in Juja </p>
+            <p>As a youthful kenyan, I strive to learn a new skillset daily, focusing on my growth and also doing what I love: Design meaningful and interactive experiences, boostrapping and styling useful tools and also doing business.</p>
+            <p><b>Lets Code a life that needs no escape.</b>
+        </div>
+    </div>
+</section>
+<section id="now" class="bg-gray-100">
+    <div class="section-container max-w-3xl space-y-6">
+        <h1 class="text-2xl font-bold xl-4xl">
+            Now
+        </h1>
+        <div class="grid grid-cols-2">
+            <h4 class="text-xl font-semibold xl-3xl" >Software Engineer</h4>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.0" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+            </svg>
+        </div>
+        <p>Full Stack Web Development, Database and Styling, all using Ruby on Rails and Tailwind and APIs</p>
+        <div class="grid grid-cols-2">
+            <h4 class="text-xl font-semibold xl-3xl">Engineering</h4>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.0" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+            </svg>
+        </div>
+        <p>I do engineering designs and problem solving using engineering principles. I am an expert in QGIS and hydrological using HEC-HMS</p>
+        <div class="grid grid-cols-2">
+            <h4 class="text-xl font-semibold xl-3xl">Technician</h4>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.0" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+            </svg>
+        </div>
+        <p>I run a technical shop in Juja where we sell laptops and accessories. We also do both phone and laptop repairs and maintenance</p>
+    </div>
+</section>
+<section id="timeline" class="scroll-to">
+    <div class="section-container max-w-3xl space-y-6">
+        <h1 class="text-2xl font-bold xl-4xl">
+            Timeline
+        </h1>
+        <ul class="list-disc space-y-4">
+            <li class="space-y-4">
+                <h6><b>2000</b></h6>
+                Born in Vihiga, Kenya
+            </li>
+            <li>
+                <h6><b>2016</b></h6>
+                Did my High School Exam, got good grades
+            </li>
+            <li>
+                <h6><b>2017-2022</b></h6>
+                Did an Engineering course in Jomo Kenyatta University of Agriculture and Technology
+            </li>
+            <li>
+                <h6><b>2017-Date</b></h6>
+                Started Mc Mobiles and Laptop Solutions Electronic shop which I'm running to date
+            </li>
+            <li>
+                <h6><b>September 2022</b></h6>
+                Travelled to Copenhagen, Denmark and presented my project at the International Water Association World Water Congress 2022 which happened at Bella Center
+            </li>
+            <li>
+                <h6><b>June 2023</b></h6>
+                Graduated and officially became a Graduate Engineer
+            </li>
+            <li>
+                <h6><b>Jan 2023 And...</b></h6>
+                Started my new journey of learning and improving my skills. I have been doing GIS and Hydrology. I also started learning coding, Ruby on Rails programming Environment and styling with tailwindcss
+            </li>
+        </ul>
+         <div class="grid grid-gap-6">
+            <h1 class="text-2xl font-bold xl-4xl">Find me online</h1>
+            <p>
+                You can find me on 
+                <%= link_to 'Twitter', 'https://twitter.com/', target: '_blank', class: 'text-secondary hover:underline' %>, 
+                <%= link_to 'Linkedin', 'https://linkedin.com/in/', target: '_blank', class: 'text-secondary hover:underline' %>, 
+                <%= link_to 'Instagram', 'https://instagram.com/', target: '_blank', class: 'text-secondary hover:underline' %>. 
+            </p>
+         </div>
+    </div>
+</section>

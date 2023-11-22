@@ -1,0 +1,75 @@
+<section class="bg-gray-100">
+    <div class="section-container">
+        <div class="grid xl:grid-cols-2 gap-6">
+            <div class="flex-container">
+                <div class='space-y-6'>
+                    <h1 class="text-3xl font-bold xl:text-5xl">Hi! its Lugadilu &#x1F44B;</h1>
+                    <div class="space-y-3">
+                        <p>Welcome! I design websites using <b>Ruby on Rails and TailwindCSS(Full Stack Software Developer).</b></p>
+                        <p>Professionally I am an <b>Agricultural and Biosystems Engineer</b>majoring in <b>Soil Water and Environmental Engineering</b></p>
+                        <p>I am also a <b>Hydrologist.</b> I use <b>Qgis</b> as a way to interpret, style and present my data and maps. I do hydrological modelling using <b>HEC-HMS, SWAT tools, and GR2M</b> and I am based in Nairobi.</p>
+                        <p>In addition, I run an electronics shop called <b>Mc mobiles and Laptop Solutions </b> Where we do phone and laptop repairs and Laptop sales based in Nairobi and JuJa. Please Click <%= link_to 'here', shop_path, class: 'text-secondary' %> to have a look at our Laptops and desktops. Welcome.</p>
+
+                        <p>I am also a member of the <b>International Water Association.</b>I have dne multiole projects in the water sector, one of which got international recognition. Through our project <b>Smart Sustainable Urban Floods Solutions(SSURFS)</b>I was able to lead a delegation to the <b>International Water Association World Water Congress 2022</b>that happened in <b>Copenhagen, Denmark.</b>I was able to present my project to the World Water leaders in the conference including <b>Grundfos and Ramboll</b>.This happened under the Next Generation Water Action 2022. You can read more at <%= link_to 'https://nextgenerationwateraction.com/ngwa-2022-ramboll-team-kenya/', "https://nextgenerationwateraction.com/ngwa-2022-ramboll-team-kenya/", class: 'text-secondary', target: 'blank'%> and <%= link_to "https://www.jkuat.ac.ke/departments/abed/?p=2372", "https://www.jkuat.ac.ke/departments/abed/?p=2372", class: 'text-secondary', target: "blank" %>.</p>
+                    </div> 
+                </div>
+            </div>
+            <div class="h-full w-auto rounded xl:flex xl:items-center">
+                <%= image_tag 'iwaall.jpeg', class: "w-full h-full xl:w-auto xl:h-96 object-cover" %>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="default-container py-16">
+        <div class="grid">
+            <div class="text-3xl font-medium xl:text-5xl italics">
+                <div class="space-y-4">
+                    <p>You want to understand more about our services and our whaat we have done?</p>
+                    <p>Well, &#128065;&#128065;let me show you around!</p>
+                    <p>&#x1F6A7;Grab your cofee(mine's smoking&#x2615;),sit back, relax and enjoy the ride&#128675;</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-white">
+    <div class="section-container">
+        <div class="space-y-6">
+            <h1 class="text-2xl font-bold xl:text-4xl ">My Projects</h1>
+            <div class="grid xl:grid-cols-3 gap-6">
+
+                <% @projects.each do |project| %>
+                    <%= link_to project_path(project), class: "block" do %>
+                        <div>
+                            <%= image_tag project.image_link, class: "h-56 xl:h-96 w-full object-cover" %>
+                            <h1 class="text-xl font-bold xl:text-2xl space-y-9"><%= project.title %></h1>
+                        </div>
+                    <%end%>
+                <%end%>
+            
+            </div>
+        </div> 
+    </div>
+</section>
+<section class="bg-gray-100">
+    <div class="section-container">
+        <div class="space-y-6">
+            <h1 class="text-2xl font-bold xl:text-4xl ">My blog</h1>
+            <div class="grid xl:grid-cols-3 gap-9">
+                <% @posts.each do |post| %>
+                    <%= link_to post_path(post), class: "block" do %>
+                        <div>
+                            <%= image_tag post.image_link, class: "h-56 xl:h-96 w-full object-cover" %>
+                            <h1 class="text-xl font-bold xl:text-2xl space-y-9"><%= post.title %></h1>
+                        </div>
+                    <%end%>
+                <%end%>
+            </div>
+        </div> 
+    </div>
+</section>
+
+<%= link_to home_path do %>
+    <%= image_tag 'passport.jpg', class: 'h-8 w-8 xl:h-10 w-10 rounded' %>
+<%end%>

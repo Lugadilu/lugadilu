@@ -1,0 +1,43 @@
+<%= form_with model: [:dashboard, post] do |form| %>
+
+    <%= render 'dashboard/shared/error', model: post%>
+    <div class="grid gap-6">
+        <div class="grid gap-1">
+            <%= form.label :title, "Post Title", class: "font-bold"%>
+            <%= form.text_field :title, placeholder: "Enter post title", class: "w-full"%>
+            <%= render 'dashboard/shared/field_error', model: post, field: :title%>
+        </div>
+        <div class="grid gap-1">
+            <%= form.collection_select(:user_id, User.all, :id, :name) %>
+        </div>
+        <div class="grid gap-3">
+            <%= form.label :excerpt, "Post exerpt", class: "font-bold"%>
+            <%= form.text_area :excerpt, class: "w-full"%>
+            <%= render 'dashboard/shared/field_error', model: post, field: :excerpt%>
+        </div>
+        <div class="grid gap-3">
+            <%= form.label :body, "Post body", class: "font-bold"%>
+            <%= form.text_area :body, class: "w-full tinymce"%>
+            <%= render 'dashboard/shared/field_error', model: post, field: :body%>
+        </div>
+        <div class="grid gap-1">
+            <%= form.label :image, "Post image", class: "font-bold"%>
+            <%= form.file_field :image, placeholder: "Enter post image", class: "w-full"%>
+            <%= render 'dashboard/shared/field_error', model: post, field: :image%>
+        </div> 
+        <div class="grid gap-3">
+        <div class="flex space-x-2 items-center">
+            <%= form.radio_button :published, true %>
+            <%= form.label :published_true, "published", class: "font-bold" %>
+        </div>
+        <div class="flex space-x-2 items-center">
+            <%= form.radio_button :published, false %>
+            <%= form.label :published_false, "Not published", class: "font-bold" %>
+        </div>
+            <%= render 'dashboard/shared/field_error', model: post, field: :published%>
+        </div>
+        <div>
+            <%= form.submit class: "btn-secondary"%>
+        </div>
+    </div>
+<%end%>
