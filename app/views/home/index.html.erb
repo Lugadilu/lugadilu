@@ -40,7 +40,7 @@
             <h1 class="text-2xl font-bold xl:text-4xl ">My Projects</h1>
             <div class="grid xl:grid-cols-3 gap-6">
 
-                <% @projects.each do |project| %>
+                <% @projects.first(3).each do |project| %>
                     <%= link_to project_path(project), class: "block" do %>
                         <div>
                             <%= image_tag project.image_link, class: "h-56 xl:h-96 w-full object-cover" %>
@@ -48,6 +48,9 @@
                         </div>
                     <%end%>
                 <%end%>
+                <%= link_to projects_path, class: "read-more-link" do %>
+                    <p class="read-more-text "> More projects</p>
+                <% end %>
             
             </div>
         </div> 
@@ -58,7 +61,7 @@
         <div class="space-y-6">
             <h1 class="text-2xl font-bold xl:text-4xl ">My blog</h1>
             <div class="grid xl:grid-cols-3 gap-9">
-                <% @posts.each do |post| %>
+                <% @posts.first(3).each do |post| %>
                     <%= link_to post_path(post), class: "block" do %>
                         <div>
                             <%= image_tag post.image_link, class: "h-56 xl:h-96 w-full object-cover" %>
@@ -66,6 +69,9 @@
                         </div>
                     <%end%>
                 <%end%>
+                <%= link_to posts_path, class: "read-more-link" do %>
+                    <p class="read-more-text "> More Blogs</p>
+                <% end %>
             </div>
         </div> 
     </div>
