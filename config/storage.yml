@@ -32,3 +32,11 @@ local:
 #   service: Mirror
 #   primary: local
 #   mirrors: [ amazon, google, microsoft ]
+
+digitalocean:
+  service: S3
+  endpoint: "https://fra1.digitaloceanspaces.com"
+  access_key_id: "DO00NQJDUHQ7FBQ3MNTM"
+  secret_access_key: "1XKAWM0OY/UdQk1edS3ageRfXI/A+pTyVI/XRh5xK8U"
+  bucket: "yadaspotappcontent"
+  region: unused
