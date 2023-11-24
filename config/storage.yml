@@ -35,8 +35,8 @@ local:
 
 digitalocean:
   service: S3
-  endpoint: "https://fra1.digitaloceanspaces.com"
-  access_key_id: "DO00NQJDUHQ7FBQ3MNTM"
-  secret_access_key: "1XKAWM0OY/UdQk1edS3ageRfXI/A+pTyVI/XRh5xK8U"
-  bucket: "yadaspotappcontent"
+  endpoint: <%= Rails.application.credentials.digitalocean[:endpoint] %>
+  access_key_id: <%= Rails.application.credentials.digitalocean[:access_key_id] %>
+  secret_access_key: <%= Rails.application.credentials.digitalocean[:secret_access_key] %>
+  bucket: <%= Rails.application.credentials.digitalocean[:bucket] %>
   region: unused
