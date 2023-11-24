@@ -61,5 +61,3 @@
 #   }
 
 server '64.226.77.149', user: 'emmanuel', roles: %w{app db web}
-
-after "deploy:cleanup"
