@@ -4,15 +4,9 @@ class Project < ApplicationRecord
     validates :description, presence: {message: "project description must be given"}
     has_one_attached :image
 
+    include SingleImageable
+
     def to_param
         slug
-    end
-
-    def image_link
-        if image.attached?
-            image
-        else
-            "default.jpg"
-        end
     end
 end
