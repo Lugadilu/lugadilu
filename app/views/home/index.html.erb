@@ -7,10 +7,10 @@
                     <div class="space-y-3">
                         <p>Welcome! I design websites using <b>Ruby on Rails and TailwindCSS(Full Stack Software Developer).</b></p>
                         <p>Professionally I am an <b>Agricultural and Biosystems Engineer</b>majoring in <b>Soil Water and Environmental Engineering</b></p>
-                        <p>I am also a <b>Hydrologist.</b> I use <b>Qgis</b> as a way to interpret, style and present my data and maps. I do hydrological modelling using <b>HEC-HMS, SWAT tools, and GR2M</b> and I am based in Nairobi.</p>
-                        <p>In addition, I run an electronics shop called <b>Mc mobiles and Laptop Solutions </b> Where we do phone and laptop repairs and Laptop sales based in Nairobi and JuJa. Please Click <%= link_to 'here', shop_path, class: 'text-secondary' %> to have a look at our Laptops and desktops. Welcome.</p>
+                        <p>I am also a <b>Hydrologist.</b> I use <b>Qgis</b> as a way to interpret, style and present my data and maps. I do hydrological modelling using <b>HEC-HMS, SWAT tools, and GR2M</b> and analyze big data using R. I am based in Nairobi.</p>
+                        <p>In addition, I run an electronics shop called <b>Mc mobiles and Laptop Solutions </b> Where we do phone, laptop repairs and Laptop sales based in Nairobi and JuJa. Please Click <%= link_to 'here', shop_path, class: 'text-secondary' %> to have a look at our Laptops and desktops. Welcome.</p>
 
-                        <p>I am also a member of the <b>International Water Association.</b>I have dne multiole projects in the water sector, one of which got international recognition. Through our project <b>Smart Sustainable Urban Floods Solutions(SSURFS)</b>I was able to lead a delegation to the <b>International Water Association World Water Congress 2022</b>that happened in <b>Copenhagen, Denmark.</b>I was able to present my project to the World Water leaders in the conference including <b>Grundfos and Ramboll</b>.This happened under the Next Generation Water Action 2022. You can read more at <%= link_to 'https://nextgenerationwateraction.com/ngwa-2022-ramboll-team-kenya/', "https://nextgenerationwateraction.com/ngwa-2022-ramboll-team-kenya/", class: 'text-secondary', target: 'blank'%> and <%= link_to "https://www.jkuat.ac.ke/departments/abed/?p=2372", "https://www.jkuat.ac.ke/departments/abed/?p=2372", class: 'text-secondary', target: "blank" %>.</p>
+                        <p>I am also a member of the <b>International Water Association.</b>I have done multiple projects in the water sector. One of them got international recognition. Through our project <b>Smart Sustainable Urban Floods Solutions(SSURFS)</b>I was able to lead a delegation to the <b>International Water Association World Water Congress 2022</b>that happened in <b>Copenhagen, Denmark.</b>I was able to present my project to the World Water leaders in the conference including <b>Grundfos and Ramboll</b>.This happened under the Next Generation Water Action 2022. You can read more at <%= link_to 'https://nextgenerationwateraction.com/ngwa-2022-ramboll-team-kenya/', "https://nextgenerationwateraction.com/ngwa-2022-ramboll-team-kenya/", class: 'text-secondary', target: 'blank'%> and <%= link_to "https://www.jkuat.ac.ke/departments/abed/?p=2372", "https://www.jkuat.ac.ke/departments/abed/?p=2372", class: 'text-secondary', target: "blank" %>.</p>
                         <p>To know more about me and my journey, please click <%= link_to 'about me', about_path, class: 'text-secondary'%> and to read more about our hydrology part, please click <%= link_to 'Hydrology', hydrology_path, class: 'text-secondary'%> </p> 
                     </div> 
                 </div>
@@ -40,7 +40,7 @@
             <h1 class="text-2xl font-bold xl:text-4xl ">My Projects</h1>
             <div class="grid xl:grid-cols-3 gap-6">
 
-                <% @projects.first(3).each do |project| %>
+                <% @projects.take(6).each do |project| %>
                     <%= link_to project_path(project), class: "block" do %>
                         <div>
                             <%= image_tag project.image_link, class: "h-56 xl:h-96 w-full object-cover" %>
@@ -61,13 +61,13 @@
         <div class="space-y-6">
             <h1 class="text-2xl font-bold xl:text-4xl ">My blog</h1>
             <div class="grid xl:grid-cols-3 gap-9">
-                <% @posts.first(3).each do |post| %>
+                <% @posts.take(6).each do |post| %>
                     <%= link_to post_path(post), class: "block" do %>
                         <div>
                             <%= image_tag post.image_link, class: "h-56 xl:h-96 w-full object-cover" %>
                             <h1 class="text-xl font-bold xl:text-2xl space-y-9"><%= post.title %></h1>
                         </div>
-                    <%end%>
+                    <% end %>
                 <%end%>
                 <%= link_to posts_path, class: "read-more-link" do %>
                     <p class="read-more-text "> More Blogs</p>
